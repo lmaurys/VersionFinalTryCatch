@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EmailSignature from '../components/EmailSignature';
+---
+
+<Layout title="Email Signature">
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="p-8">
+      <div class="mb-8 text-center">
+        <h1 class="text-2xl font-bold mb-4">Email Signature Preview</h1>
+        <p class="text-gray-600">Usa la herramienta de captura de pantalla de tu sistema para guardar la firma</p>
+      </div>
+      <EmailSignature client:load />
+    </div>
+  </main>
+</Layout>

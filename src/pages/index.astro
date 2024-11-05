@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnimatedTitle from '../components/AnimatedTitle';
+import ParticlesBackground from '../components/ParticlesBackground';
+
+const features = [
+  {
+    title: "Desarrollo a Medida",
+    description: "Soluciones personalizadas que se adaptan perfectamente a tu negocio",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />`
+  },
+  {
+    title: "Cloud Solutions",
+    description: "Infraestructura escalable y segura en la nube",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />`
+  },
+  {
+    title: "SaaS Platforms",
+    description: "Plataformas como servicio que impulsan tu negocio",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />`
+  }
+];
+
+const stats = [
+  { number: "100+", label: "Proyectos Completados" },
+  { number: "95%", label: "Clientes Satisfechos" },
+  { number: "24/7", label: "Soporte Técnico" },
+  { number: "10+", label: "Años de Experiencia" }
+];
+
+const achievements = [
+  {
+    title: "Transformación Digital",
+    stats: [
+      { value: "60%", label: "Reducción en Costos Operativos" },
+      { value: "85%", label: "Mejora en Eficiencia" }
+    ],
+    description: "Ayudamos a empresas a modernizar sus operaciones mediante soluciones digitales innovadoras.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`
+  },
+  {
+    title: "Escalabilidad Cloud",
+    stats: [
+      { value: "99.9%", label: "Uptime Garantizado" },
+      { value: "3x", label: "Mejora en Rendimiento" }
+    ],
+    description: "Implementamos arquitecturas cloud que crecen con tu negocio.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />`
+  },
+  {
+    title: "Innovación Continua",
+    stats: [
+      { value: "45+", label: "Nuevas Características/Mes" },
+      { value: "15min", label: "Tiempo de Respuesta" }
+    ],
+    description: "Mantenemos tus sistemas actualizados con las últimas tecnologías.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />`
+  }
+];
+
+---
+
+<Layout title="Inicio">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <ParticlesBackground client:load />
+      <div class="container mx-auto px-4 py-32 relative z-10">
+        <div class="text-center">
+          <AnimatedTitle
+            text="Transformamos Ideas en"
+            highlightedText="Soluciones Digitales"
+            client:load
+          />
+          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Desarrollamos software a medida, soluciones cloud y plataformas SaaS 
+            que impulsan el crecimiento de tu negocio.
+          </p>
+          <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+            <a
+              href="/contacto"
+              class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-colors"
+            >
+              Comienza tu Proyecto
+            </a>
+            <a
+              href="/servicios"
+              class="bg-dark hover:bg-dark/90 text-white px-8 py-3 rounded-lg transition-colors"
+            >
+              Conoce más
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Nuestras Soluciones</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Ofrecemos un conjunto completo de servicios tecnológicos para ayudarte 
+            a alcanzar tus objetivos empresariales.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div class="text-primary mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={feature.icon} />
+              </div>
+              <h3 class="text-2xl font-bold mb-4">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-dark text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          {stats.map((stat, index) => (
+            <div data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="text-4xl font-bold text-primary mb-2">{stat.number}</div>
+              <div class="text-gray-400">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Achievements Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Impacto Real en Números</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {achievements.map((achievement, index) => (
+            <div 
+              class="relative bg-slate-50 p-8 rounded-xl overflow-hidden group hover:shadow-lg transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <!-- Decorative gradient -->
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <div class="relative">
+                <div class="text-primary mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={achievement.icon} />
+                </div>
+                
+                <h3 class="text-2xl font-bold mb-4">{achievement.title}</h3>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  {achievement.stats.map(stat => (
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                      <div class="text-3xl font-bold text-primary mb-1">{stat.value}</div>
+                      <div class="text-sm text-gray-600">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <p class="text-gray-600">{achievement.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-4xl font-bold mb-6">¿Por qué elegirnos?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+              En Try Catch Solutions, combinamos experiencia técnica con un profundo 
+              entendimiento de los negocios para entregar soluciones que marcan la diferencia.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-600">
+                <svg class="h-6 w-6 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Equipo altamente especializado
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="h-6 w-6 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Tecnologías de última generación
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="h-6 w-6 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Metodologías ágiles
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="h-6 w-6 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Soporte continuo
+              </li>
+            </ul>
+          </div>
+          <div class="relative" data-aos="fade-left">
+            <div class="bg-primary/10 rounded-xl p-8">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="text-primary text-4xl font-bold mb-2">+50%</div>
+                  <div class="text-gray-600">Reducción de Costos</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="text-primary text-4xl font-bold mb-2">2x</div>
+                  <div class="text-gray-600">Velocidad de Desarrollo</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="text-primary text-4xl font-bold mb-2">99%</div>
+                  <div class="text-gray-600">Disponibilidad</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="text-primary text-4xl font-bold mb-2">24/7</div>
+                  <div class="text-gray-600">Soporte Técnico</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">
+          ¿Listo para transformar tu negocio?
+        </h2>
+        <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          Únete a las empresas que ya han transformado su negocio con nuestras soluciones tecnológicas.
+        </p>
+        <a
+          href="/contacto"
+          class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-colors"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          Contacta con nosotros
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

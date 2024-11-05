@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const servicios = [
+  {
+    id: "software",
+    title: "Software a Medida",
+    description: "Desarrollamos soluciones personalizadas que se adaptan perfectamente a tu negocio",
+    features: [
+      "Aplicaciones web empresariales",
+      "Sistemas de gestión personalizados",
+      "Integraciones con APIs y servicios externos",
+      "Optimización de procesos empresariales"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />`,
+    benefits: [
+      "Reducción de costos operativos",
+      "Mayor eficiencia en procesos",
+      "Escalabilidad garantizada",
+      "Soporte continuo"
+    ]
+  },
+  {
+    id: "cloud",
+    title: "Soluciones Cloud",
+    description: "Moderniza tu infraestructura con nuestras soluciones en la nube",
+    features: [
+      "Arquitectura cloud-native",
+      "Migración a la nube",
+      "Optimización de costos cloud",
+      "Seguridad y cumplimiento normativo"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />`,
+    benefits: [
+      "Alta disponibilidad 24/7",
+      "Backups automáticos",
+      "Seguridad avanzada",
+      "Escalabilidad instantánea"
+    ]
+  },
+  {
+    id: "saas",
+    title: "Software como Servicio (SaaS)",
+    description: "Transforma tu idea en un producto SaaS escalable y rentable",
+    features: [
+      "Desarrollo de productos SaaS",
+      "Arquitectura multi-tenant",
+      "Sistemas de suscripción",
+      "Analíticas y métricas en tiempo real"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />`,
+    benefits: [
+      "Ingresos recurrentes",
+      "Actualizaciones automáticas",
+      "Soporte premium",
+      "Personalización avanzada"
+    ]
+  }
+];
+---
+
+<Layout title="Servicios">
+  <main class="pt-32">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+          <h1 class="text-5xl font-bold mb-6">Soluciones Tecnológicas de <span class="text-primary">Próxima Generación</span></h1>
+          <p class="text-xl text-gray-600">
+            En Try Catch Solutions no solo escribimos código, creamos soluciones que transforman negocios y superan expectativas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios Detallados -->
+    {servicios.map((servicio, index) => (
+      <section id={servicio.id} class={`py-20 ${index % 2 === 1 ? 'bg-slate-50' : 'bg-white'}`}>
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class={`${index % 2 === 1 ? 'md:order-2' : ''}`} data-aos="fade-right">
+              <div class="text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={servicio.icon} />
+              </div>
+              <h2 class="text-3xl font-bold mb-6">{servicio.title}</h2>
+              <p class="text-xl text-gray-600 mb-8">{servicio.description}</p>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-primary">Características</h3>
+                  <ul class="space-y-3">
+                    {servicio.features.map(feature => (
+                      <li class="flex items-start text-gray-600">
+                        <svg class="h-6 w-6 text-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-primary">Beneficios</h3>
+                  <ul class="space-y-3">
+                    {servicio.benefits.map(benefit => (
+                      <li class="flex items-start text-gray-600">
+                        <svg class="h-6 w-6 text-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class={`${index % 2 === 1 ? 'md:order-1' : ''}`} data-aos="fade-left">
+              <div class="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-2xl">
+                <div class="grid grid-cols-2 gap-4">
+                  {[...Array(4)].map((_, i) => (
+                    <div class="bg-white p-6 rounded-xl shadow-sm transform hover:-translate-y-1 transition-transform">
+                      <div class="text-primary mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div class="font-bold text-2xl mb-1">+{(i + 1) * 25}%</div>
+                      <div class="text-sm text-gray-600">Mejora en Eficiencia</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark text-white">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-6">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+          <p class="text-xl text-gray-400 mb-8">
+            Únete a las empresas que ya han transformado su negocio con nuestras soluciones tecnológicas.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-colors"
+          >
+            Solicita una consulta gratuita
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

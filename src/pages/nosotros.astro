@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = [
+  {
+    role: "Desarrollo Frontend",
+    description: "Creamos experiencias digitales excepcionales",
+    achievements: [
+      "Interfaces modernas y responsivas",
+      "Optimización de rendimiento",
+      "Accesibilidad web",
+      "Animaciones fluidas"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />`
+  },
+  {
+    role: "Desarrollo Backend",
+    description: "Construimos sistemas robustos y escalables",
+    achievements: [
+      "Arquitecturas distribuidas",
+      "Alta disponibilidad",
+      "Seguridad avanzada",
+      "APIs optimizadas"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />`
+  },
+  {
+    role: "DevOps & Cloud",
+    description: "Automatizamos y optimizamos infraestructuras",
+    achievements: [
+      "Despliegue continuo",
+      "Monitoreo 24/7",
+      "Escalabilidad automática",
+      "Optimización de costos"
+    ],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />`
+  }
+];
+
+const capabilities = [
+  {
+    title: "Innovación Tecnológica",
+    description: "Adoptamos y dominamos las últimas tecnologías para crear soluciones de vanguardia",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />`,
+    stats: "100+ Proyectos Innovadores"
+  },
+  {
+    title: "Arquitectura Escalable",
+    description: "Diseñamos sistemas que crecen con tu negocio, garantizando rendimiento y fiabilidad",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />`,
+    stats: "99.9% Uptime Garantizado"
+  },
+  {
+    title: "Seguridad Avanzada",
+    description: "Implementamos las mejores prácticas de seguridad en cada capa de nuestras soluciones",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+    stats: "0 Brechas de Seguridad"
+  },
+  {
+    title: "Optimización Continua",
+    description: "Mejoramos constantemente el rendimiento y la eficiencia de nuestras aplicaciones",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
+    stats: "40% Mejor Rendimiento"
+  }
+];
+---
+
+<Layout title="Quiénes Somos">
+  <main class="pt-32">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+          <h1 class="text-5xl font-bold mb-6">
+            Innovación y Excelencia en
+            <span class="text-primary">Desarrollo de Software</span>
+          </h1>
+          <p class="text-xl text-gray-600">
+            Un equipo apasionado por la tecnología, comprometido con la excelencia y la innovación continua.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-slate-50 p-8 rounded-xl" data-aos="fade-right">
+            <h2 class="text-2xl font-bold mb-4">Nuestra Misión</h2>
+            <p class="text-gray-600">
+              Transformar ideas en soluciones tecnológicas innovadoras que impulsen el éxito de nuestros clientes, 
+              mediante el desarrollo de software de alta calidad y la implementación de las mejores prácticas de la industria.
+            </p>
+          </div>
+          <div class="bg-slate-50 p-8 rounded-xl" data-aos="fade-left">
+            <h2 class="text-2xl font-bold mb-4">Nuestra Visión</h2>
+            <p class="text-gray-600">
+              Ser reconocidos globalmente como líderes en el desarrollo de soluciones tecnológicas innovadoras, 
+              manteniendo nuestro compromiso con la excelencia y la satisfacción del cliente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva Sección de Capacidades Tecnológicas -->
+    <section class="py-20 bg-slate-50 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Capacidades Tecnológicas</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Dominamos las tecnologías más avanzadas para crear soluciones que transforman negocios
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {capabilities.map((capability, index) => (
+            <div 
+              class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow group relative overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+              
+              <div class="relative">
+                <div class="text-primary mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={capability.icon} />
+                </div>
+                
+                <h3 class="text-2xl font-bold mb-4">{capability.title}</h3>
+                <p class="text-gray-600 mb-6">{capability.description}</p>
+                
+                <div class="text-primary font-bold">
+                  {capability.stats}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Nuestros Especialistas</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {team.map((member) => (
+            <div class="group" data-aos="fade-up">
+              <div class="bg-slate-50 p-8 rounded-xl transform transition-transform group-hover:-translate-y-2">
+                <div class="text-primary mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={member.icon} />
+                </div>
+                <h3 class="text-xl font-bold mb-4">{member.role}</h3>
+                <p class="text-gray-600 mb-6">{member.description}</p>
+                <div class="space-y-3">
+                  {member.achievements.map((achievement) => (
+                    <div class="flex items-center text-gray-600">
+                      <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class="text-sm">{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-20 bg-dark text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Nuestros Valores</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="text-primary mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Excelencia</h3>
+            <p class="text-gray-400">Buscamos la perfección en cada línea de código</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="text-primary mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Innovación</h3>
+            <p class="text-gray-400">Siempre a la vanguardia tecnológica</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="text-primary mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Colaboración</h3>
+            <p class="text-gray-400">Trabajamos juntos hacia el éxito</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="400">
+            <div class="text-primary mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Calidad</h3>
+            <p class="text-gray-400">Comprometidos con la excelencia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
